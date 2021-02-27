@@ -1,0 +1,13 @@
+{% extends 'basews.html' %}
+
+{% block content %}
+<form action="{%  url 'addSlideImage'%}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="slideImage">SLide Image</label>
+    <input type="file" class="form-control" id="slideImage" multiple="multiple" name="slideImage">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}

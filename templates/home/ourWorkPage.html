@@ -1,0 +1,15 @@
+{% extends 'basews.html' %}
+
+{% block content %}
+            <!-- '/media/{{our_work.thumbnail}}' -->
+              {% for our_work in our_works %}
+              
+<div class="card1 mb-3">
+  <img src="/media/{{our_work.thumbnail}}" alt="Denim Jeans" style="width:100%; height:50%;">
+  <h5>{{our_work.title}}</h5>
+  <p class="date">{{our_work.start_date}} - {% if our_work.end_date %} {{our_work.end_date}} {% else%} present {% endif %}</p>
+  <p>{{our_work.description}}</p>
+  <a href="{% url 'ourWorkPhotoPage' our_work.pk %}"><button>Photo Gallery</button></a>
+</div>
+                {% endfor %}          
+ {% endblock %}

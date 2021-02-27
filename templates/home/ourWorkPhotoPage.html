@@ -1,0 +1,29 @@
+{% extends 'basews.html' %}
+
+{% block content %}
+        
+<h2>Before</h2>
+<hr>      
+<div class="row mb-3"> 
+    {% for our_work in our_works %}
+    {% if our_work.image_before %}
+    <div class="column">
+      <img src="/media/{{ our_work.image_before }}" style="width:100%">
+      </div>
+      {% endif %}
+      {% endfor %}
+  </div>
+  <h2>After</h2>
+  <hr>
+  <div class="row mb-3"> 
+    {% for our_work in our_works %}
+    {% if our_work.image_after %}
+    <div class="column">
+      <img src="/media/{{ our_work.image_after }}" style="width:100%">
+      </div>
+      {% endif %}
+      {% endfor %}
+  </div>
+
+
+ {% endblock %}

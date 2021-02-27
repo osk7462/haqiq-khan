@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% if title %}
+      <title>{{title}}</title>
+      {% else %}
+      <title>Haqiq Khan</title>
+      {% endif %}
+</head>
+
+<body>
+    <div class="topnav" id="myTopnav">
+      <div class="container1">
+        <a href="{% url 'homePage' %}" class="active left-menu-item brandName">Haqiq Khan</a>
+        <a href="{% url 'pricePage' %}" class="right-menu-item">Prices</a>
+        <a href="{% url 'ourWorkPage' %}" class="right-menu-item">Our Work</a>
+        <a href="#" class="right-menu-item">New Post</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      </div>
+      <div class="container1">
+        {%block content%} {%endblock%}
+      </div>
+      
+    <script src="{% static 'bootstrap/js/jquery.min.js' %}"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script defer src="{% static 'fontawesome/js/all.min.js' %}"></script>
+    <script src="{% static 'main.js' %}"></script>
+</body>
+
+</html>

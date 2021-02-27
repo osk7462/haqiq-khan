@@ -1,0 +1,24 @@
+{% extends 'basews.html' %}
+
+{% block content %}
+
+<table class="table table-hover table-dark">
+    <thead>
+      <tr>
+        <th scope="col">S.NO</th>
+        <th scope="col">Product</th>
+        <th scope="col">Price/square feet</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item_price in price_list %}
+      <tr>
+        <th scope="row">{{item_price.pk}}</th>
+        <td>{{ item_price.product }}</td>
+        <td> <span>&#8377;</span> {{item_price.price}}</td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+
+ {% endblock %}
