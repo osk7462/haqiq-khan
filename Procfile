@@ -1,1 +1,1 @@
-web: gunicorn haqiqkhan.wsgi
+web: gunicorn haqiqKhan.wsgi --log-file -
