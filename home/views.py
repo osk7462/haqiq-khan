@@ -57,7 +57,7 @@ def addSlideImage(request):
         # for image in slide_image:
         #    if image.image:
         #        image.delete()
-        slide_image.delete(True)
+        slide_image.delete()
         for afile in request.FILES.getlist('slideImage'):
             slide_image = SlideImage(image=afile)
             slide_image.save()
